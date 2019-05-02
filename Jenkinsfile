@@ -17,14 +17,17 @@ pipeline {
             }
         }
 		
-		stage ('Test'){'steps' {junit 'target/surefire-reports/*.xml'}}
-		
-		stage ('Junit Test Results') {'steps' {realtimeJUnit('target/surefire-reports/*.xml') {
+		stage ('Test'){steps {junit 'target/surefire-reports/*.xml'}}
+
+        stage ('JUNIT')
+		{steps{
+		realtimeJUnit('target/surefire-reports/*.xml') {
     // some block
 }}
-
-
-        stage ('Deploy Build in Staging Area'){
+		}
+      
+	  
+	  stage ('Deploy Build in Staging Area'){
             steps{
 
                 build job : 'Package'

@@ -17,9 +17,7 @@ pipeline {
             }
         }
 		
-		stage ('PMD Result') {
-		Steps {pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''}
-		}
+		
 
         stage ('Deploy Build in Staging Area'){
             steps{

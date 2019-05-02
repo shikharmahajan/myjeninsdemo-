@@ -17,7 +17,7 @@ pipeline {
             }
         }
 		
-		stage ('PMD Result) {
+		stage ('PMD Result') {
 		Steps {pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'target/pmd.xml', unHealthy: ''}
 		}
 

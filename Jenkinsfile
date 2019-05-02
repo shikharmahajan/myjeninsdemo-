@@ -17,7 +17,7 @@ pipeline {
             }
         }
 		
-		stage (''Test'){Steps {junit 'target/surefire-reports/*.xml'}}
+		stage ('Test'){Steps {junit 'target/surefire-reports/*.xml'}}
 
 
         stage ('Deploy Build in Staging Area'){

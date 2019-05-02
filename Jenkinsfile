@@ -19,7 +19,7 @@ pipeline {
 		
 		stage ('Test'){'steps' {junit 'target/surefire-reports/*.xml'}}
 		
-		stage ('Junit Test Results') {steps {realtimeJUnit('target/surefire-reports/*.xml') {
+		stage ('Junit Test Results') {'steps' {realtimeJUnit('target/surefire-reports/*.xml') {
     // some block
 }}
 

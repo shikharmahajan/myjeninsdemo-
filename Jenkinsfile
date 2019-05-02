@@ -16,6 +16,10 @@ pipeline {
                 }
             }
         }
+		
+		stage ('PMD Result) {
+		Steps {pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'target/pmd.xml', unHealthy: ''}
+		}
 
         stage ('Deploy Build in Staging Area'){
             steps{
@@ -49,4 +53,3 @@ pipeline {
         }
     }
 }
-

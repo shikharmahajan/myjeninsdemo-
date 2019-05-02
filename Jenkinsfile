@@ -5,7 +5,7 @@ pipeline {
             steps {
 
                 /*For Mac & Linux machine */
-               sh  'mvn clean package'
+               sh  'mvn clean test package'
             }
 
             post{
@@ -18,7 +18,7 @@ pipeline {
         }
 		
 		stage ('PMD Result') {
-		Steps {pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/pmd.xml', unHealthy: ''}
+		Steps {pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''}
 		}
 
         stage ('Deploy Build in Staging Area'){
